@@ -1,8 +1,14 @@
-package bicycles;
+package bicycles.specifications;
 
+import bicycles.Bicycle;
+import bicycles.BicycleType;
 import bicycles.models.MountainBike;
 import bicycles.models.RoadBike;
 import bicycles.models.Tandem;
+import bicycles.rides.BikeRide;
+import bicycles.rides.BikeRideOne;
+import bicycles.specifications.BicycleFromSpec;
+import bicycles.specifications.BicycleSpecification;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -11,7 +17,7 @@ public class BicycleSpecificationTest {
     @Test
     public void shouldSpecifyMountainBikeRide() {
 
-        BicycleSpecification bicycleSpecification = new BicycleSpecification(11, 4 , BicycleType .MountainBike);
+        BicycleSpecification bicycleSpecification = new BicycleSpecification(11, 4 , BicycleType.MountainBike);
         Bicycle bicycleSpec = new BicycleFromSpec(bicycleSpecification);
         Bicycle bicycle = new MountainBike();
         BikeRide bikeRide= new BikeRideOne(bicycle);

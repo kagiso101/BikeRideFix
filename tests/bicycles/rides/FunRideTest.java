@@ -1,34 +1,50 @@
-package bicycles;
+package bicycles.rides;
 
+import bicycles.Bicycle;
+import bicycles.BicycleType;
 import bicycles.models.MountainBike;
 import bicycles.models.RoadBike;
 import bicycles.models.Tandem;
+import bicycles.rides.FunRide;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
-public class BikeRideTest {
-    //MountainBike
+public class FunRideTest {
     @Test
-    public void mountainBikeShouldRide() {
-
-        Bicycle bicycle = new MountainBike();
-        BikeRide bikeRide= new BikeRideOne(bicycle);
-        bikeRide.ride(bicycle);
-        assertEquals(14, bikeRide.currentSpeed());
-    }
-
-    //RoadBike
-    @Test
-    public void roadBikeShouldRide() {
-
+    public void acceptsMultipleBikes(){
+        FunRide takeARide = new FunRide(8);
         Bicycle bicycle = new RoadBike();
-        BikeRide bikeRide= new BikeRideOne(bicycle);
-        bikeRide.ride(bicycle);
-        assertEquals(36, bikeRide.currentSpeed());
+        Bicycle bicycle1 = new MountainBike();
+        Bicycle bicycle2 = new Tandem();
+        takeARide.accept(bicycle);
+        takeARide.accept(bicycle);
+        takeARide.accept(bicycle2);
+        takeARide.accept(bicycle1);
+        takeARide.accept(bicycle1);
+        assertEquals(5, takeARide.getEnteredCount());
     }
-
+    @Test
+    public void acceptsRoadBike(){
+        FunRide takeARide = new FunRide(8);
+        Bicycle bicycle = new RoadBike();
+        takeARide.accept(bicycle);
+        assertEquals(1, takeARide.getEnteredCount());
+    }
+    @Test
+    public void acceptsMountainBike(){
+        FunRide takeARide = new FunRide(8);
+        Bicycle bicycle = new MountainBike();
+        takeARide.accept(bicycle);
+        assertEquals(1, takeARide.getEnteredCount());
+    }
+    @Test
+    public void acceptsTandem(){
+        FunRide takeARide = new FunRide(8);
+        Bicycle bicycle = new Tandem();
+        takeARide.accept(bicycle);
+        assertEquals(1, takeARide.getEnteredCount());
+    }
     @Test
     public void getCounterForOneMountainBike(){
         FunRide takeARide = new FunRide(8);
