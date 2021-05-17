@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FunRideTest {
     @Test
-    public void acceptsMultipleBikes(){
+    public void acceptsMultipleBikesAndNotTakeDuplicates(){
         FunRide takeARide = new FunRide(8);
         Bicycle bicycle = new RoadBike();
         Bicycle bicycle1 = new MountainBike();
@@ -21,7 +21,7 @@ public class FunRideTest {
         takeARide.accept(bicycle2);
         takeARide.accept(bicycle1);
         takeARide.accept(bicycle1);
-        assertEquals(5, takeARide.getEnteredCount());
+        assertEquals(3, takeARide.getEnteredCount());
     }
     @Test
     public void acceptsRoadBike(){
@@ -56,9 +56,11 @@ public class FunRideTest {
     public void getCounterForMultipleMountainBike(){
         FunRide takeARide = new FunRide(8);
         Bicycle bicycle = new MountainBike();
+        Bicycle bicycle2 = new MountainBike();
+        Bicycle bicycle3 = new MountainBike();
         takeARide.accept(bicycle);
-        takeARide.accept(bicycle);
-        takeARide.accept(bicycle);
+        takeARide.accept(bicycle2);
+        takeARide.accept(bicycle3);
         assertEquals(3, takeARide.getEnteredCount());
     }
     @Test
@@ -72,9 +74,12 @@ public class FunRideTest {
     public void getCounterForMultipleTandems(){
         FunRide takeARide = new FunRide(8);
         Bicycle bicycle = new Tandem();
+        Bicycle bicycle2 = new Tandem();
+        Bicycle bicycle3 = new Tandem();
         takeARide.accept(bicycle);
-        takeARide.accept(bicycle);
-        takeARide.accept(bicycle);
+        takeARide.accept(bicycle2);
+        takeARide.accept(bicycle3);
+
         assertEquals(3, takeARide.getEnteredCount());
     }
     @Test
@@ -88,20 +93,26 @@ public class FunRideTest {
     public void getCounterForMultipleRoadBikes(){
         FunRide takeARide = new FunRide(8);
         Bicycle bicycle = new RoadBike();
+        Bicycle bicycle2 = new RoadBike();
+        Bicycle bicycle3 = new RoadBike();
+        Bicycle bicycle4 = new RoadBike();
+        Bicycle bicycle5 = new RoadBike();
         takeARide.accept(bicycle);
-        takeARide.accept(bicycle);
-        takeARide.accept(bicycle);
-        takeARide.accept(bicycle);
-        takeARide.accept(bicycle);
+        takeARide.accept(bicycle2);
+        takeARide.accept(bicycle3);
+        takeARide.accept(bicycle4);
+        takeARide.accept(bicycle5);
         assertEquals(5, takeARide.getEnteredCount());
     }
     @Test
     public void getCounterForDifferentTypes(){
         FunRide takeARide = new FunRide(8);
         Bicycle bicycle = new RoadBike();
+        Bicycle bicycle2 = new RoadBike();
+        Bicycle bicycle3 = new RoadBike();
         takeARide.accept(bicycle);
-        takeARide.accept(bicycle);
-        takeARide.accept(bicycle);
+        takeARide.accept(bicycle2);
+        takeARide.accept(bicycle3);
         assertEquals(3, takeARide.getCountForType(BicycleType.RoadBike));
     }
     @Test

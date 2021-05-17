@@ -1,13 +1,13 @@
 package bicycles;
 
-public abstract class BicycleBase implements Bicycle{
+
+//implements bicycle methods ,inherited from the bicycle interface
+    public abstract class BicycleBase implements Bicycle{
     protected   int speed;
     public BicycleType bicycleType;
 
     protected void changeSpeed(int speedChange){
-
         speed += speedChange;
-
     }
 
     @Override
@@ -26,7 +26,6 @@ public abstract class BicycleBase implements Bicycle{
     }
 
     public void stop(){
-
         speed = 0;
     }
 

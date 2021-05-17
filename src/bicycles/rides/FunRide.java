@@ -7,8 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FunRide {
-
-    protected int maxBikes;
+//maximum number of bikes which is declared in the implementation /running of the class
+protected int maxBikes;
+//list of bicycles
     private List<Bicycle> myList = new ArrayList<Bicycle>();
 
     public FunRide(int maxBikes) {

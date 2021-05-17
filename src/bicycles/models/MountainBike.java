@@ -4,6 +4,8 @@ import bicycles.Bicycle;
 import bicycles.BicycleBase;
 import bicycles.BicycleType;
 
+
+//runs implementation of bicycle methods as it inherits the methods from bicycleBase , which implements the bicycle
 public class MountainBike extends BicycleBase {
 
 

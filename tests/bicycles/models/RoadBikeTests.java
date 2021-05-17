@@ -12,7 +12,7 @@ public class RoadBikeTests {
 
         Bicycle bicycle = new RoadBike();
         bicycle.accelerate();
-        assertEquals(5, bicycle.currentSpeed());
+        assertEquals(11, bicycle.currentSpeed());
     }
     @Test
     public void shouldAccelerateAndBrake() {
@@ -20,7 +20,7 @@ public class RoadBikeTests {
         Bicycle bicycle = new RoadBike();
         bicycle.accelerate();
         bicycle.brake();
-        assertEquals(2, bicycle.currentSpeed());
+        assertEquals(7, bicycle.currentSpeed());
     }
     @Test
     public void multipleAccelerationsAndBrake() {
@@ -33,7 +33,7 @@ public class RoadBikeTests {
         bicycle.brake();
         bicycle.brake();
 
-        assertEquals(14, bicycle.currentSpeed());
+        assertEquals(36, bicycle.currentSpeed());
     }
     @Test
     public void shouldStop() {
