@@ -104,4 +104,17 @@ public class FunRideTest {
         takeARide.accept(bicycle);
         assertEquals(3, takeARide.getCountForType(BicycleType.RoadBike));
     }
+    @Test
+    public void getCounterForMultipleBikes(){
+        FunRide takeARide = new FunRide(8);
+        Bicycle bicycle = new MountainBike();
+        Bicycle bicycle2 = new Tandem();
+        Bicycle bicycle3 = new RoadBike();
+        Bicycle bicycle4 = new MountainBike();
+        takeARide.accept(bicycle);
+        takeARide.accept(bicycle2);
+        takeARide.accept(bicycle3);
+        takeARide.accept(bicycle4);
+        assertEquals(4, takeARide.getEnteredCount());
+    }
 }

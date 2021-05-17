@@ -17,7 +17,7 @@ public class FunRide {
 
     public String accept(Bicycle bicycle) {
 
-        if (myList.size() < maxBikes) {
+        if (myList.size() < maxBikes && !myList.contains(bicycle)) {
             myList.add(bicycle);
             return "Added To the list";
         } else {
