@@ -1,6 +1,6 @@
 package bicycles.models;
 
-//import bicycles.models.Tandem;
+
 import bicycles.Bicycle;
 import org.junit.jupiter.api.Test;
 
