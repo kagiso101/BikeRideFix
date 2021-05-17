@@ -75,4 +75,33 @@ public class BikeRideTest {
         assertEquals(170, bikeRide.currentSpeed());
     }
 
+    @Test
+    public void shouldStopTheMountainBikeRide() {
+
+        Bicycle bicycle = new MountainBike();
+        BikeRide bikeRide= new BikeRideOne(bicycle);
+        ((BikeRideOne) bikeRide).stopRide();
+
+        assertEquals(0, bikeRide.currentSpeed());
+    }
+
+    @Test
+    public void shouldStopTheRoadBikeRide() {
+
+        Bicycle bicycle = new RoadBike();
+        BikeRide bikeRide= new BikeRideOne(bicycle);
+        ((BikeRideOne) bikeRide).stopRide();
+
+        assertEquals(0, bikeRide.currentSpeed());
+    }
+    @Test
+    public void shouldStopTheTandemRide() {
+
+        Bicycle bicycle = new Tandem();
+        BikeRide bikeRide= new BikeRideOne(bicycle);
+        ((BikeRideOne) bikeRide).stopRide();
+
+        assertEquals(0, bikeRide.currentSpeed());
+    }
+
 }

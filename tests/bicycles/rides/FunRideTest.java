@@ -49,7 +49,7 @@ public class FunRideTest {
     public void getCounterForOneMountainBike(){
         FunRide takeARide = new FunRide(8);
         Bicycle bicycle = new MountainBike();
-        takeARide.accept(bicycle);
+
         assertEquals(1, takeARide.getEnteredCount());
     }
 
