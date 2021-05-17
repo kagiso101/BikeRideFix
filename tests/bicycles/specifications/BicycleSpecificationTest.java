@@ -7,8 +7,7 @@ import bicycles.models.RoadBike;
 import bicycles.models.Tandem;
 import bicycles.rides.BikeRide;
 import bicycles.rides.BikeRideOne;
-import bicycles.specifications.BicycleFromSpec;
-import bicycles.specifications.BicycleSpecification;
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
